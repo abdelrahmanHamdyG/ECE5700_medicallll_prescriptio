@@ -1,0 +1,199 @@
+instruction_ar,instruction_en,category,word_count
+قرص واحد,One tablet,dosage,2
+مرة واحدة يوميا,Once daily,frequency,3
+مرتين يوميا,Twice daily,frequency,2
+ثلاث مرات يوميا,Three times daily,frequency,3
+قبل الأكل,Before meals,timing,2
+بعد الأكل,After meals,timing,2
+مع الأكل,With meals,timing,2
+قبل النوم,Before sleep,timing,2
+عند الحاجة,As needed,conditional,2
+كل ٨ ساعات,Every 8 hours,frequency,3
+كل ١٢ ساعة,Every 12 hours,frequency,3
+كل ٦ ساعات,Every 6 hours,frequency,3
+كل ٤ ساعات,Every 4 hours,frequency,3
+قرصين,Two tablets,dosage,1
+نصف قرص,Half tablet,dosage,2
+كبسولة واحدة,One capsule,dosage,2
+ملعقة صغيرة,One teaspoon,dosage,2
+ملعقة كبيرة,One tablespoon,dosage,2
+٥ مل,5 ml,dosage,2
+١٠ مل,10 ml,dosage,2
+نقطة واحدة,One drop,dosage,2
+نقطتين,Two drops,dosage,1
+ثلاث نقط,Three drops,dosage,2
+في كل عين,In each eye,location,3
+في العين المصابة,In affected eye,location,3
+في كل أذن,In each ear,location,3
+يرج جيدا قبل الاستعمال,Shake well before use,instruction,4
+قرص واحد مرة يوميا,One tablet once daily,combined,4
+قرص ثلاث مرات يوميا,Tablet three times daily,combined,4
+قرصين مرتين يوميا,Two tablets twice daily,combined,3
+كبسولة كل ٨ ساعات,Capsule every 8 hours,combined,4
+قرص كل ١٢ ساعة,Tablet every 12 hours,combined,4
+ملعقة ثلاث مرات يوميا,Spoon three times daily,combined,4
+قبل الأكل بنصف ساعة,Half hour before meals,timing,4
+بعد الأكل بساعة,One hour after meals,timing,3
+على معدة فارغة,On empty stomach,timing,3
+قرص صباحا ومساء,Tablet morning and evening,combined,3
+لمدة ٧ أيام,For 7 days,duration,3
+لمدة أسبوع,For one week,duration,2
+لمدة أسبوعين,For two weeks,duration,2
+لمدة شهر,For one month,duration,2
+حتى انتهاء الكمية,Until finished,duration,3
+تحت اللسان,Under the tongue,location,2
+يذاب في الفم,Dissolve in mouth,instruction,3
+قرص مرتين قبل الأكل,Tablet twice before meals,combined,4
+قرص ثلاثا بعد الأكل,Tablet thrice after meals,combined,4
+كبسولة قبل النوم,Capsule before sleep,combined,3
+قرصين مع الأكل,Two tablets with meals,combined,3
+ملعقة صباحا ومساء,Spoon morning and evening,combined,3
+قرص كل ٨ ساعات,Tablet every 8 hours,combined,4
+نقطة بكل عين مرتين,Drop each eye twice,combined,4
+نقطتين بكل عين,Two drops each eye,combined,4
+بختان عند الحاجة,Two puffs as needed,combined,4
+قرص عند ارتفاع الحرارة,Tablet when fever rises,combined,4
+ملعقة قبل الأكل,Spoon before meals,combined,3
+كبسولتين على معدة فارغة,Two capsules empty stomach,combined,4
+قرص صباحا قبل الإفطار,Tablet morning before breakfast,combined,4
+نصف قرص مرتين يوميا,Half tablet twice daily,combined,4
+٥ مل بعد الأكل,5ml after meals,combined,4
+كيس يذاب بكوب ماء,Sachet dissolved in water,combined,4
+لبوسة قبل النوم,Suppository before sleep,combined,3
+يدهن على المنطقة المصابة,Apply to affected area,application,4
+طبقة رقيقة مرتين يوميا,Thin layer twice daily,combined,4
+حقنة كل ٢٤ ساعة,Injection every 24 hours,combined,4
+أربع مرات يوميا,Four times daily,frequency,3
+مرة كل يومين,Once every two days,frequency,4
+ثلاثا اسبوعيا,Three times weekly,frequency,2
+صباحا,In the morning,timing,1
+مساء,In the evening,timing,1
+ظهراً,At noon,timing,1
+عند اللزوم,When necessary,conditional,2
+ثلاثة أقراص,Three tablets,dosage,2
+ربع قرص,Quarter tablet,dosage,2
+كبسولتين,Two capsules,dosage,1
+نصف ملعقة صغيرة,Half teaspoon,dosage,3
+ملعقة ونصف,One and half spoon,dosage,3
+في الأذن المصابة,In affected ear,location,3
+لمدة ٣ أيام,For 3 days,duration,3
+لمدة ٥ أيام,For 5 days,duration,3
+لمدة ١٠ أيام,For 10 days,duration,3
+لمدة ٣ شهور,For 3 months,duration,3
+دهان موضعي,Topical application,application,2
+طبقة رقيقة,Thin layer,application,2
+يغسل بعد نصف ساعة,Wash after half hour,instruction,4
+تدليك خفيف,Gentle massage,instruction,2
+حتى الامتصاص الكامل,Until fully absorbed,instruction,3
+حقنة في العضل,Intramuscular injection,application,3
+حقنة تحت الجلد,Subcutaneous injection,application,3
+حقنة في الوريد,Intravenous injection,application,3
+بختان,Two puffs,dosage,1
+بخة واحدة,One puff,dosage,2
+ثلاث بخات,Three puffs,dosage,2
+استنشاق عميق,Deep inhalation,instruction,2
+لبوسة واحدة,One suppository,dosage,2
+قرص عند النوم,Tablet at bedtime,combined,3
+قرصين قبل النوم,Two tablets before sleep,combined,3
+عند ارتفاع الحرارة,When fever rises,conditional,3
+عند الشعور بالألم,When feeling pain,conditional,3
+عند الصداع,For headache,conditional,2
+عند الغثيان,For nausea,conditional,2
+في حالة السعال,In case of cough,conditional,4
+لا تتجاوز ٤ جرعات,Do not exceed 4 doses,warning,4
+بحد أقصى ٣ مرات,Maximum 3 times,warning,4
+نقطتين بالعين اليمنى,Two drops right eye,combined,3
+نقطتين بالعين اليسرى,Two drops left eye,combined,3
+٣ نقط بالأذن المصابة,3 drops affected ear,combined,4
+كيس واحد,One sachet,dosage,2
+يذاب بكوب ماء,Dissolve in water glass,instruction,3
+يذاب بنصف كوب ماء,Dissolve in half glass,instruction,4
+يحرك جيدا,Stir well,instruction,2
+قرص أربعاً قبل الأكل,Tablet four times before meals,combined,4
+كبسولة صباحا ومساء,Capsule morning and evening,combined,3
+ملعقة كل ٦ ساعات,Spoon every 6 hours,combined,4
+قرصين ثلاثا بعد الأكل,Two tablets thrice after meals,combined,4
+نقطة بكل عين أربعاً,Drop each eye four times,combined,5
+بخة كل ٤ ساعات,Puff every 4 hours,combined,4
+قرص عند الألم,Tablet when pain,combined,3
+٥ مل قبل النوم,5ml before sleep,combined,3
+نصف قرص صباحا ومساء,Half tablet morning evening,combined,4
+كبسولتين قبل الإفطار,Two capsules before breakfast,combined,3
+ملعقة كبيرة مرتين يوميا,Tablespoon twice daily,combined,3
+يدهن ثلاثا يوميا,Apply three times daily,combined,3
+حقنة كل ١٢ ساعة,Injection every 12 hours,combined,4
+قرص يذاب تحت اللسان,Tablet dissolve under tongue,combined,4
+لبوسة كل ٨ ساعات,Suppository every 8 hours,combined,4
+كيس مرتين قبل الأكل,Sachet twice before meals,combined,4
+نقطتين ثلاثا يوميا,Two drops three times daily,combined,4
+بختان صباحا ومساء,Two puffs morning evening,combined,3
+ملعقة بعد الأكل,Spoon after meals,combined,3
+قرص واحد فقط,One tablet only,combined,3
+مرة واحدة فقط,Once only,frequency,3
+حسب الحاجة,As per need,conditional,3
+عند الضرورة,When necessary,conditional,2
+مع الوجبة,With meal,timing,2
+قبل الوجبة,Before meal,timing,2
+بعد الوجبة,After meal,timing,2
+١٥ مل,15 ml,dosage,2
+٢٠ مل,20 ml,dosage,2
+٢ مل,2 ml,dosage,2
+أربع نقط,Four drops,dosage,2
+خمس نقط,Five drops,dosage,2
+قرص ونصف,One and half tablet,dosage,3
+ملعقتين صغيرتين,Two teaspoons,dosage,2
+ثلاث ملاعق,Three spoons,dosage,2
+كبسولة مرة يوميا,Capsule once daily,combined,3
+قرص مرة يوميا,Tablet once daily,combined,3
+نقطة مرتين يوميا,Drop twice daily,combined,3
+بخة ثلاثا يوميا,Puff three times daily,combined,4
+لبوسة مرة يوميا,Suppository once daily,combined,3
+حقنة مرة يوميا,Injection once daily,combined,3
+دهان مرتين يوميا,Ointment twice daily,combined,3
+كيس مرة يوميا,Sachet once daily,combined,3
+على الريق,On empty stomach,timing,2
+قبل الفطار,Before breakfast,timing,2
+قبل الغدا,Before lunch,timing,2
+قبل العشاء,Before dinner,timing,2
+بعد الفطار,After breakfast,timing,2
+بعد الغدا,After lunch,timing,2
+وقت النوم,At bedtime,timing,2
+مع كوب ماء,With glass of water,timing,3
+بكوب ماء كامل,With full water glass,timing,3
+يؤخذ كاملاً,Take whole,instruction,2
+لا يقسم,Do not split,instruction,2
+لا يفتح,Do not open,instruction,2
+مع عصير,With juice,timing,2
+مع لبن,With milk,timing,2
+يمضغ جيدا,Chew well,instruction,2
+امسح على الجلد,Wipe on skin,application,3
+دلك بلطف,Massage gently,application,2
+اغسل يديك بعدها,Wash hands after,instruction,3
+رج العبوة أولاً,Shake bottle first,instruction,3
+٤ نقط,4 drops,dosage,2
+٦ نقط,6 drops,dosage,2
+قطارة واحدة,One dropper,dosage,2
+قطارتين,Two droppers,dosage,1
+نصف كبسولة,Half capsule,dosage,2
+بعد الاستيقاظ مباشرة,Right after waking,timing,3
+قبل التمرين,Before exercise,timing,2
+بعد التمرين,After exercise,timing,2
+في المسا, In the evenning,timing,2
+بعد العشا,Before dinner,timing,2
+ق كل يوم,,,3
+ق يوميا,,,2
+ك قبل الفطار,,,3
+ك بعد المغرب والعشاء,,,4
+ق قبل النوم,,,3
+١/٢ ق ,,,
+١/٢  ساعة ,,,
+كل خمس ساعات ,,,
+ق بعد الغد ,,,
+ق قبل الظهر,,,
+ق بعد الفطار,,,
+ق بين المغرب والعشاء ,,,
+قرصين يوميا,,,
+ملعقتين كبار,,,
+مسحوق ,,,
+٢,,,
+٣  اقراص,,,

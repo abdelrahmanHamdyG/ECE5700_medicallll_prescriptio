@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Environment Variables (Secrets)
+.env
+.env.*
+
+# Downloaded Models & Checkpoints
+checkpoints/
+arabic_tokenizer_clean/
+hatformer-muharaf/
+hatformer.zip
+
+# Generated & Downloaded Data
+# Note: The generators and dataset builders will recreate these automatically
+data/processed/
+data/synthetic/
+data/raw/
+
+# Log Files & Artifacts
+*.log
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
