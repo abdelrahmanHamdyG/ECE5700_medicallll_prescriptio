@@ -10,6 +10,27 @@ An OCR pipeline that reads handwritten Egyptian medical prescriptions and return
 4. **HATFormer** — reads Arabic instructions
 5. **Gemini 1.5 Flash** — pairs medicines with instructions using spatial layout, outputs JSON
 
+## Project Structure
+
+```
+src/
+├── config.py              # Global paths, hyperparameters, and constants
+├── generators/            # Synthetic prescription image generation (Arabic and English)
+├── models/
+│   └── lang_classifier.py # CNN architecture for English/Arabic word classification
+├── scripts/
+│   ├── build_*_dataset.py # Builds train/test CSV splits for each model
+│   └── download_models.py # Downloads model checkpoints from Google Drive
+├── training/
+│   ├── lang_classifier_trainer.py       # Trains the language classifier
+│   ├── english_ocr_trainer.py           # Fine-tunes TrOCR with LoRA
+│   └── hatformer_arabic_trainer_v2.py   # Fine-tunes HATFormer for Arabic OCR
+└── utils/
+    └── craft_batch_extractor.py         # Runs CRAFT detection and crops text regions
+```
+
+> The HATFormer training script is inspired by the original HATFormer repository.
+
 ## Requirements
 
 - Windows 10/11
@@ -19,29 +40,31 @@ An OCR pipeline that reads handwritten Egyptian medical prescriptions and return
 
 ## Installation
 
+Our automated startup scripts natively handle creating a dedicated Conda environment (`ocr310`), dynamically probing whether your system supports CUDA to install the correct PyTorch bindings, and installing all OCR dependencies perfectly without manual headaches!
+
 **1. Clone the repo**
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/abdelrahmanHamdyG/ECE5700_medicallll_prescriptio
 cd egyptian_prescription_final
 ```
 
 **2. Run the installer**
 ```bash
-# Command Prompt / PowerShell
+# Windows (Command Prompt / PowerShell)
 install.bat
 
-# Git Bash
+# Linux / Mac (Git Bash)
 bash install.sh
 ```
 
 **3. Add your Gemini API key**
-
 Create a `.env` file in the project root:
-```
+```text
 GEMINI_API_KEY=your_api_key_here
 ```
 
 **4. Download model weights**
+Now that the installation successfully built the `ocr310` environment, activate it and grab the heavy model weights directly from the cloud natively!
 ```bash
 conda activate ocr310
 python -m src.scripts.download_models
@@ -92,4 +115,3 @@ conda activate ocr310
 pip install torch==2.5.1 torchvision==0.20.1
 pip install -r requirements.txt
 ```
-
