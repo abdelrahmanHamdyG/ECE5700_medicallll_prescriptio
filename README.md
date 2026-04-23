@@ -40,8 +40,6 @@ src/
 
 ## Installation
 
-Our automated startup scripts natively handle creating a dedicated Conda environment (`ocr310`), dynamically probing whether your system supports CUDA to install the correct PyTorch bindings, and installing all OCR dependencies perfectly without manual headaches!
-
 **1. Clone the repo**
 ```bash
 git clone https://github.com/abdelrahmanHamdyG/ECE5700_medicallll_prescriptio
@@ -64,7 +62,7 @@ GEMINI_API_KEY=your_api_key_here
 ```
 
 **4. Download model weights**
-Now that the installation successfully built the `ocr310` environment, activate it and grab the heavy model weights directly from the cloud natively!
+Now that the installation successfully built the `ocr310` environment
 ```bash
 conda activate ocr310
 python -m src.scripts.download_models
@@ -107,11 +105,3 @@ python -m src.training.english_ocr_trainer
 python -m src.training.hatformer_arabic_trainer_v2
 ```
 
-Checkpoints are saved to `checkpoints/` at the end of each epoch.
-
-**PyTorch install fails** — install manually:
-```bash
-conda activate ocr310
-pip install torch==2.5.1 torchvision==0.20.1
-pip install -r requirements.txt
-```
