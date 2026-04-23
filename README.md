@@ -1,91 +1,95 @@
 # Egyptian Medical Prescription OCR System
 
-This project is an OCR pipeline built specifically to handle handwritten Egyptian medical prescriptions. It extracts the English medicine names and their corresponding Arabic instructions, and structures them into a clean JSON format.
-
-Since medical prescriptions can be highly unstructured and noisy (doctor signatures, overlapping text, bad lighting, etc.), we use a multi-step approach combining different specialized models to tackle the problem piece by piece.
+An OCR pipeline that reads handwritten Egyptian medical prescriptions and returns structured JSON pairing each medicine name (English) with its Arabic instruction.
 
 ## How It Works
 
-1. **Text Detection (CRAFT)**: Finds all the text bounding boxes on the page.
-2. **Language Classification (MobileNetV3)**: Looks at each cropped word and figures out if it's English or Arabic.
-3. **Medical English OCR (TrOCR + LoRA)**: Reads the English medicine names.
-4. **Arabic Instructions OCR (HATFormer)**: Reads the Arabic medical instructions (like dosages and timing).
-5. **Structuring (Gemini 1.5 Flash)**: Takes all the scattered English and Arabic text, looks at where they were placed on the page, and smartly pairs each medicine with its instruction while filtering out the noise.
+1. **CRAFT** — detects text bounding boxes
+2. **MobileNetV3** — classifies each word crop as English or Arabic
+3. **TrOCR + LoRA** — reads English medicine names
+4. **HATFormer** — reads Arabic instructions
+5. **Gemini 1.5 Flash** — pairs medicines with instructions using spatial layout, outputs JSON
 
-## Project Structure
+## Requirements
 
-```text
-egyptian_prescription_final/
-├── checkpoints/              # Model weights go here
-├── data/
-│   ├── processed/            # Pandas CSV sheets for train/test splits
-│   ├── raw/                  # Real datasets, crops, and evaluation benchmarks
-│   └── synthetic/            # Output folders for our synthetic generators
-├── resources/
-│   ├── fonts/                # Arabic and English fonts used for data generation
-│   └── lexicons/             # Lists of medicines and common Arabic instructions
-├── src/
-│   ├── config.py             # Main configuration for paths and generator settings
-│   ├── data/                 # PyTorch datasets 
-│   ├── generators/           # Scripts to generate synthetic prescription crops
-│   ├── scripts/              # Helper scripts to build CSVs and download models
-│   ├── training/             # Clean, stripped-down training scripts
-│   └── utils/                # Extras like CRAFT batch utilities
-├── test_pipeline.py          # The main script you run to process an image
-└── requirements.txt          # Python packages you need
-```
+- Windows 10/11
+- [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
+- Gemini API key — free at [Google AI Studio](https://aistudio.google.com/app/apikey)
+- NVIDIA GPU recommended for training, not required for inference
 
-## Setup & Installation
+## Installation
 
-I recommend using a Conda environment (like `ocr310`) to keep things clean and avoid conflicts.
-
-**1. Install packages:**
+**1. Clone the repo**
 ```bash
-pip install -r requirements.txt
+git clone <your-repo-url>
+cd egyptian_prescription_final
 ```
 
-**2. Setup Gemini:**
-To use the LLM structuring step, you need a Gemini API key. Just create a `.env` file in the main folder and add:
-```text
+**2. Run the installer**
+```bash
+# Command Prompt / PowerShell
+install.bat
+
+# Git Bash
+bash install.sh
+```
+
+**3. Add your Gemini API key**
+
+Create a `.env` file in the project root:
+```
 GEMINI_API_KEY=your_api_key_here
 ```
 
-**3. Download the Models:**
-The repo doesn't include the heavy model weights by default. We have a handy script that downloads the best trained models directly from Google Drive into the `checkpoints/` folder.
+**4. Download model weights**
 ```bash
+conda activate ocr310
 python -m src.scripts.download_models
 ```
 
 ## Running the Pipeline
 
-Once the models are downloaded, you can test the system on an image:
-
 ```bash
-python test_pipeline.py path/to/your/image.jpeg
+conda activate ocr310
+python test_pipeline.py path/to/image.jpeg
 ```
-This will run the detection, OCR, and Gemini steps, printing out the structured JSON at the end!
 
-## Training the Models
+Three sample images are included for testing: `10.jpeg`, `38.jpeg`, `51.jpeg`
 
-If you ever want to retrain the models, the codebase is setup to train entirely on synthetic data. We've removed validation steps during training to keep things fast, straightforward, and memory-efficient.
+Output format:
+```json
+[
+  { "medicine": "Amoxicillin", "instruction": "حبة كل 8 ساعات لمدة 7 أيام" },
+  { "medicine": "Paracetamol", "instruction": "حبتين عند الألم" }
+]
+```
 
-**Step 1: Generate synthetic images**
+## Training
+
+Requires an NVIDIA GPU. Trains entirely on synthetic data.
+
 ```bash
+# Generate synthetic data
 python -m src.generators.generate_english_ocr_prescription
 python -m src.generators.generate_arabic_ocr_prescription
-```
 
-**Step 2: Build train/test CSVs**
-```bash
+# Build CSV splits
 python -m src.scripts.build_classifier_dataset
 python -m src.scripts.build_english_ocr_dataset
 python -m src.scripts.build_hatformer_arabic_dataset
-```
 
-**Step 3: Run the trainers**
-(Checkpoints will automatically save to the `checkpoints/` folder at the end of each epoch).
-```bash
+# Train
 python -m src.training.lang_classifier_trainer
 python -m src.training.english_ocr_trainer
 python -m src.training.hatformer_arabic_trainer_v2
 ```
+
+Checkpoints are saved to `checkpoints/` at the end of each epoch.
+
+**PyTorch install fails** — install manually:
+```bash
+conda activate ocr310
+pip install torch==2.5.1 torchvision==0.20.1
+pip install -r requirements.txt
+```
+
